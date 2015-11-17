@@ -1,1 +1,3 @@
 *.pyc
+ussdmenus/migrations
+*.sqlite3
