@@ -37,7 +37,7 @@ app.controller("AppController", ["$scope", "$http", function($scope, $http){
 		}, function errorCallback(response) {
 			// display notification
 			console.log("error sending");
-			$scope.ussdResponse = "<div class='text-danger text-center'><i class='fa fa-warning'></i> Error sending request. <br>Is the socket <kbd>" + $scope.host.address + ":" + $scope.host.port +"</kbd> alive?</div>";
+			$scope.ussdResponse = "<div class='text-danger text-center'><i class='glyphicon glyphicon-warning-sign'></i> Error sending request. <br>Is the socket <kbd>" + $scope.host.address + ":" + $scope.host.port +"</kbd> alive?</div>";
 		});
 	};
 }]);
