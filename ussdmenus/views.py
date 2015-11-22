@@ -14,9 +14,9 @@ def run(request):
 	# params['imsi'] = request.POST['imsi']
 	# params['ussdRequestString'] = request.POST['query_string']
 	# host_port = 
-	params['msisdn'] = "2343243424"
-	params['sessionId'] = "23432342"
-	params['imsi'] = "23423423"
+	params['msisdn'] = request.GET["msisdn"]
+	params['sessionId'] = request.GET["session_id"]
+	params['imsi'] = request.GET["imsi"]
 	params['ussdRequestString'] = request.GET["query_string"]
 	proxy = xmlrpclib.ServerProxy(str(request.GET["server"]))
 	response = proxy.handleRequest(params)

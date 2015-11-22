@@ -25,7 +25,7 @@ app.controller("AppController", ["$scope", "$http", function($scope, $http){
 		console.log("send click");
 		var server = "http://" + $scope.host.address + ":" + $scope.host.port;
 		console.log(server);
-		var data = {"server": server, "query_string": $scope.query_string};
+		var data = {"server": server, "query_string": $scope.query_string, "msisdn": $scope.msisdn, "session_id": $scope.session_id, "imsi": $scope.imsi};
 		console.log("Request: ");
 		console.log(data);
 		$http({
