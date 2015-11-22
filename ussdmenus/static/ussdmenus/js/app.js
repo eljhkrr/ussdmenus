@@ -1,17 +1,20 @@
-var app = angular.module("ussd", ['ngWebsocket', 'ngSanitize']);
+var app = angular.module("ussd", ['ngWebsocket', 'ngSanitize', 'xeditable']);
+
+app.run(function(editableOptions) {
+  editableOptions.theme = 'bs3';
+});
 
 app.controller("AppController", ["$scope", "$http", function($scope, $http){
 
 	$scope.host = {"address": "127.0.0.1", "port": 15290};
 	$scope.query_string = "1";
-	$scope.msisdn = Math.floor((Math.random() * 1000000) + 1);;
-	$scope.session_id = Math.floor((Math.random() * 1000000) + 1);
-	$scope.imsi = Math.floor((Math.random() * 1000000) + 1);
-
+	
 	$scope.ussdResponse = "<div class='muted text-center'>Response will be displayed here</div>";
 
-	$scope.clear = function(){
-		$scope.host = {"address": "", "port": null};
+	$scope.refresh = function(){
+		$scope.msisdn = Math.floor((Math.random() * 1000000) + 1);;
+		$scope.session_id = Math.floor((Math.random() * 1000000) + 1);
+		$scope.imsi = Math.floor((Math.random() * 1000000) + 1);
 	};
 
 	$scope.test = function(){

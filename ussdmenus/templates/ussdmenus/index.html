@@ -40,35 +40,24 @@
         <h3 class="text-muted">USSD menu navigator</h3>
       </div>
 
-      <form class="form-inline">
-        <div class="form-group">
-          <label class="text-muted">http://</label>
-          <input type="text" ng-model="host.address" class="form-control" placeholder="Host Name or IP">
+      <div clas="row" ng-init="refresh()">
+        <h4>
+          http://<a href="#" editable-text="host.address"><span ng-bind="host.address"></span></a>:
+          <a href="#" editable-text="host.port"><span ng-bind="host.port"></span></a>
+        </h4>
+        <div class="col-md-3">
+          MSISDN: <a href="#" editable-text="msisdn"><span ng-bind="msisdn"></span></a>
         </div>
-        <div class="form-group">
-          <label class="text-muted">:</label>
-          <input type="number" ng-model="host.port" class="form-control" placeholder="Port#">
+        <div class="col-md-3">
+          Session ID: <a href="#" editable-text="session_id"><span ng-bind="session_id"></span></a>
         </div>
-        <button type="submit" class="btn btn-danger" ng-click="clear()"><i class="glyphicon glyphicon-remove"></i> Clear</button>
-        <button type="submit" class="btn btn-default" ng-click="test()">Test Connection</button>
-      </form>
-      <form class="form-inline">
-        <!-- <input type="text" ng-model="host.address" class="form-control" placeholder="Host Name or IP">
-        <input type="text" ng-model="host.address" class="form-control" placeholder="Host Name or IP">
-        <input type="text" ng-model="host.address" class="form-control" placeholder="Host Name or IP"> -->
-        <div class="form-group">
-          <label class="text-muted">MSISDN</label><br>
-          <input type="text" ng-model="msisdn" class="form-control" placeholder="MSISDN">
+        <div class="col-md-3">
+          IMSI: <a href="#" editable-text="imsi"><span ng-bind="imsi"></span></a>
         </div>
-        <div class="form-group">
-          <label class="text-muted">Session ID</label><br>
-          <input type="number" ng-model="session_id" class="form-control" placeholder="session ID">
+        <div class="col-md-3">
+          <button type="button" class="btn btn-link" ng-click="refresh()"><span class="glyphicon glyphicon-refresh"></span></button>
         </div>
-         <div class="form-group">
-          <label class="text-muted">IMSI</label><br>
-          <input type="number" ng-model="imsi" class="form-control" placeholder="IMSI">
-        </div>
-      </form>
+      </div>
 
       <div class="response">
         <h4>Response:</h4>
