@@ -40,7 +40,7 @@
         <h3 class="text-muted">USSD menu navigator</h3>
       </div>
 
-      <div clas="row" ng-init="refresh()">
+      <div class="row text-muted" ng-init="refresh()">
         <h4>
           http://<a href="#" editable-text="host.address"><span ng-bind="host.address"></span></a>:
           <a href="#" editable-text="host.port"><span ng-bind="host.port"></span></a>
@@ -60,7 +60,7 @@
       </div>
 
       <div class="response">
-        <h4>Response:</h4>
+        <!-- <h4>Response:</h4> -->
         <div class="content">
 
           <pre ng-bind-html="ussdResponse"></pre>
@@ -75,7 +75,7 @@
           <button type="button" class="btn btn-success" ng-click="send()">Send</button>
         </form>
 
-        <h5 class="text-center text-muted">press <kbd>ENTER</kbd> to send keystrokes</h5>
+        <h5 class="text-center text-muted">(press <kbd>ENTER</kbd> to send keystrokes)</h5>
 
       </div>
 
