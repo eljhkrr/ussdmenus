@@ -26,4 +26,4 @@ def run(request):
 	#return HttpResponse(r)
 
 def ussd_setup(request):
-	return HttpResponse("redddddd")
+	return render(request, 'ussdmenus/index.html', {})
