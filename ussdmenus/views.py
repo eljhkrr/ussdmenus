@@ -20,7 +20,7 @@ def run(request):
 	params['ussdRequestString'] = request.GET["query_string"]
 	proxy = xmlrpclib.ServerProxy(str(request.GET["server"]))
 	response = proxy.handleRequest(params)
-	response_text = '<pre>' + response['ussdResponseString'] + '</pre>'
+	response_text = response['ussdResponseString']
 	#response_text = dict(request.body)
 	# response_text = type(request.body)
 	# response_text = request.GET["query_string"]
