@@ -9,7 +9,7 @@ app.controller("AppController", ["$scope", "$http", function($scope, $http){
 	$scope.host = {"address": "127.0.0.1", "port": 15290};
 	$scope.query_string = "1";
 	
-	$scope.ussdResponse = "<div class='muted text-center'>Response will be displayed here</div>";
+	$scope.ussdResponse = "<div class='text-muted text-center'>Response will be displayed here</div>";
 
 	$scope.refresh = function(){
 		$scope.msisdn = Math.floor((Math.random() * 1000000) + 1);;
