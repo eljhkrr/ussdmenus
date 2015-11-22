@@ -1,5 +1,3 @@
-{% load staticfiles %}
-
 <!DOCTYPE html>
 <html lang="en" ng-app="ussd">
   <head>
@@ -12,6 +10,7 @@
     <!-- <link rel="icon" href="img/favicon.ico"> -->
 
     <title>USSD menu navigator</title>
+    {% load staticfiles %}
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'ussdmenus/css/bootstrap.css' %}" rel="stylesheet">
@@ -55,18 +54,16 @@
         </div>
       </form>
 
-
-
       <div class="response">
         <h4>Response:</h4>
-        <div class="content">
-
+        <div class="content" ng-bind-html="ussdResponse">
+            
         </div>
 
         <form class="form-inline text-center">
           <div class="form-group">
             <label class="text-muted">Send keystrokes</label>
-            <input type="text" id="reply" class="form-control" placeholder="1234" value="1234324">
+            <input type="text" id="reply" class="form-control" ng-model="query_string" placeholder="1234" value="1234324">
           </div>
           <button type="button" class="btn btn-success" ng-click="send()">Send</button>
         </form>
@@ -93,6 +90,7 @@
 
     <script src="{% static 'ussdmenus/js/angular.js' %}"></script>
     <script src="{% static 'ussdmenus/js/ng-websocket.js' %}"></script>
+    <script src="{% static 'ussdmenus/js/angular-sanitize.js' %}"></script>
     <script src="{% static 'ussdmenus/js/notie.js' %}"></script>
     <script src="{% static 'ussdmenus/js/app.js' %}"></script>
   </body>
