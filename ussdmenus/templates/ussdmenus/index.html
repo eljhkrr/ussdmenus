@@ -40,11 +40,15 @@
         <h3 class="text-muted">USSD menu navigator</h3>
       </div>
 
-      <div class="row text-muted" ng-init="refresh()">
-        <h4>
+      <div class="row">
+        <h4 class="col-md-12">
           http://<a href="#" editable-text="host.address"><span ng-bind="host.address"></span></a>:
           <a href="#" editable-text="host.port"><span ng-bind="host.port"></span></a>
         </h4>
+      </div>
+
+      <div class="row text-muted" ng-init="refresh()">
+        
         <div class="col-md-3">
           MSISDN: <a href="#" editable-text="msisdn"><span ng-bind="msisdn"></span></a>
         </div>
