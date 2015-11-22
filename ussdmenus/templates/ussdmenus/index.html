@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en" ng-app="ussd">
   <head>
@@ -7,15 +9,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/favicon.ico">
+    <!-- <link rel="icon" href="img/favicon.ico"> -->
 
     <title>USSD menu navigator</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'ussdmenus/css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{% static 'ussdmenus/css/app.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -89,9 +91,9 @@
       document.getElementById('reply').select();
     </script>
 
-    <script src="js/angular.js"></script>
-    <script src="js/ng-websocket.js"></script>
-    <script src="js/notie.js"></script>
-    <script src="js/app.js"></script>
+    <script src="{% static 'ussdmenus/js/angular.js' %}"></script>
+    <script src="{% static 'ussdmenus/js/ng-websocket.js' %}"></script>
+    <script src="{% static 'ussdmenus/js/notie.js' %}"></script>
+    <script src="{% static 'ussdmenus/js/app.js' %}"></script>
   </body>
 </html>
