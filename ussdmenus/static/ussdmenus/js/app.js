@@ -4,7 +4,7 @@ app.controller("AppController", ["$scope", "$http", function($scope, $http){
 
 	$scope.host = {"address": "127.0.0.1", "port": 15290};
 	$scope.query_string = "1";
-	$scope.ussdResponse = "<div class='muted text-center'>Response</div>";
+	$scope.ussdResponse = "<div class='muted text-center'>Response will be displayed here</div>";
 
 	$scope.clear = function(){
 		$scope.host = {"address": "", "port": null};
@@ -33,6 +33,7 @@ app.controller("AppController", ["$scope", "$http", function($scope, $http){
 		}, function errorCallback(response) {
 			// display notification
 			console.log("error sending");
+			$scope.ussdResponse = "<div class='text-warning text-center'><i class='fa fa-warning'></i> Error sending request. <br>Is the socket <kbd>" + $scope.host.address + ":" + $scope.host.port +"</kbd> alive?</div>";
 		});
 	};
 }]);
